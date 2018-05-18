@@ -14,7 +14,7 @@
 
 Route::get('/', function () {
     echo "opl";
-    dd('jui');
+    dd('juiyuu');
 });
 
 Auth::routes();
