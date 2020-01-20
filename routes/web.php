@@ -22,3 +22,10 @@ Route::get('foo', function () {
 Route::get('/ElaSearch', 'ElaSearchController@index');
 
 Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
+
+Route::post('login', 'Api\PassportController@login');
+Route::post('register', 'Api\PassportController@register');
+
+Route::group(['middleware' => 'auth:api'], function(){
+    Route::post('get-details', 'Api\PassportController@getDetails');
+});
