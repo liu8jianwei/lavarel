@@ -1,16 +1,20 @@
-<?php 
+<?php
+
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Controller;
 use Elasticsearch\ClientBuilder;
 
 /**
  * elasticSearch 
  */
-class ElaSearchController extends Controller {
-	
-	public function index(){
+class ElaSearchController extends Controller
+{
+
+	public function index()
+	{
 		$hosts = [
-			'localhost:8006'
+			'localhost:9200'
 		];
 		echo 34;
 		$client = ClientBuilder::create()->setHosts($hosts)->build();
@@ -20,9 +24,8 @@ class ElaSearchController extends Controller {
 			'id' => 'my_id',
 			'body' => ['testField' => 'abc']
 		];
-		
+
 		$response = $client->index($params);
 		print_r($response);
 	}
-
 }
