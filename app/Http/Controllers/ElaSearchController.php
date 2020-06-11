@@ -14,7 +14,7 @@ class ElaSearchController extends Controller
 	public function index()
 	{
 		$hosts = [
-			'localhost:9200'
+			'http://182.92.218.34:9200/'
 		];
 		echo 34;
 		$client = ClientBuilder::create()->setHosts($hosts)->build();
