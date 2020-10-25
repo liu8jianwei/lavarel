@@ -16,12 +16,12 @@ class ElaSearchController extends Controller
 		$hosts = [
 			'http://182.92.218.34:9200/'
 		];
-		echo 34;
+
 		$client = ClientBuilder::create()->setHosts($hosts)->build();
 		$params = [
-			'index' => 'my_index',
-			'type' => 'my_type',
-			'id' => 'my_id',
+			'index' => 'first',
+			'type' => 'text',
+			'id' => '12',
 			'body' => ['testField' => 'abc']
 		];
 
